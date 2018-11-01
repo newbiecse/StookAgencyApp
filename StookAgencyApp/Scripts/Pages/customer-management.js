@@ -2,9 +2,14 @@
 
     var $table, $rowTemplate;
 
-    var toggerActionButtons = function ($tr) {
-        $tr.find('.editting-show').toggle();
-        $tr.find('.editting-unshow').toggle();
+    var toggerActionButtons = function ($tr, enableEditMode) {
+        if (enableEditMode) {
+            $tr.find('.editting-show').show();
+            $tr.find('.editting-unshow').hide();
+        } else {
+            $tr.find('.editting-show').hide();
+            $tr.find('.editting-unshow').show();
+        }
     }
 
     var addError = function ($td, errMsg) {
@@ -65,7 +70,7 @@
     var onEditClick = function () {
         $table.on('click', '.td-actions .btn-edit', function () {
             var $tr = $(this).closest('tr');
-            var id = $tr.data('id');
+            var id = $tr.attr('data-id');
 
             $tr.find('.td-editable').each(function () {
                 var val = $(this).data('val');
@@ -82,7 +87,7 @@
                 format: "M dd, yyyy"
             });
 
-            toggerActionButtons($tr);
+            toggerActionButtons($tr, true);
         });
     }
 
@@ -94,7 +99,7 @@
                 return false;
             }
 
-            var id = $tr.data('id');
+            var id = parseInt($tr.attr('data-id'));
 
             var data = {
                 id: id
@@ -117,7 +122,7 @@
                 success: function (response) {
                     data.id = response.id;
                     onSaveSuccess(data, $tr);
-                    toggerActionButtons($tr);
+                    toggerActionButtons($tr, false);
 
                     $.toast({
                         heading: 'Success',
@@ -156,7 +161,7 @@
                 $(this).html(val);
             });
 
-            toggerActionButtons($tr);
+            toggerActionButtons($tr, false);
         });
     }
 
