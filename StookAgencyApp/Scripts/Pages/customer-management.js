@@ -115,6 +115,7 @@
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(data),
                 success: function (response) {
+                    data.id = response.id;
                     onSaveSuccess(data, $tr);
                     toggerActionButtons($tr);
 
@@ -136,7 +137,7 @@
 
     var onSaveSuccess = function (data, $tr) {
 
-        $tr.data('id', data.id);
+        $tr.attr('data-id', data.id);
 
         $tr.find('.td-editable').each(function () {
             var name = $(this).data('name');
@@ -200,14 +201,6 @@
                             }
                         });
                     }
-
-                    //Swal(
-                    //    'Deleted!',
-                    //    'Your imaginary file has been deleted.',
-                    //    'success'
-                    //)
-                    // For more information about handling dismissals please visit
-                    // https://sweetalert2.github.io/#handling-dismissals
                 }
             })
             
