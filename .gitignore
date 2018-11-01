@@ -1,0 +1,5 @@
+packages/
+StookAgencyApp/bin/
+StookAgencyApp/obj/
+.vs/
+StookAgencyApp/StookAgencyApp.csproj.user

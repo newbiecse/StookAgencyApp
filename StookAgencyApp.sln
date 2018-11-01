@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StookAgencyApp", "StookAgencyApp\StookAgencyApp.csproj", "{8C33B370-5EEA-43C4-B477-402F331B9CF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C33B370-5EEA-43C4-B477-402F331B9CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C33B370-5EEA-43C4-B477-402F331B9CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C33B370-5EEA-43C4-B477-402F331B9CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C33B370-5EEA-43C4-B477-402F331B9CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B43A2C2-EEBE-4FB7-AE2F-06BB61FD2070}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/plugins/bootstrap-datepicker/bootstrap-datepicker3.css" rel="stylesheet" />
+    <link href="~/Scripts/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/Scripts/plugins/jquery-toast/jquery.toast.min.css" rel="stylesheet" />
+    <style>
+        body {
+          font-family: 'Roboto', sans-serif;
+          /*font-size: 48px;*/
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="~/Scripts/plugins/jquery-toast/jquery.toast.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="~/Scripts/plugins/promise-polyfill/promise-polyfill.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

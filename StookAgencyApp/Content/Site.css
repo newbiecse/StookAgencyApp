@@ -1,0 +1,68 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.editting-show {
+    display: none;
+}
+
+.tr-template {
+    display: none;
+}
+
+.help-block {
+    color: #e85b59;
+}
+
+#user-table {
+    border: 1px solid #f8f9fb;
+}
+
+    #user-table thead th {
+        border-bottom: 1px;
+    }
+
+    #user-table thead, #user-table tfoot {
+        background-color: #f8f9fb;
+    }
+
+    .sign-out-section {
+        margin-bottom: 10px;
+    }
+
+#user-table .td-actions .btn-container {
+    margin-bottom: 2px;
+}
+
+#user-table td {
+   display: table-cell;
+   vertical-align: middle;
+}
+
+.btn-sign-out {
+    /*width: 100%;*/
+    color: #fff;
+    background-color: #38be99;
+    padding: 8px 20px;
+}

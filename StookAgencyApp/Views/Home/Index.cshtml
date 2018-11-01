@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Customer>
+
+@{
+    ViewBag.Title = "Customer management";
+}
+
+<div>
+
+    <div class="sign-out-section">
+
+        <a href="@Url.Action("LogOff", "Account")" class="btn pull-right btn-sign-out">Sign out</a>
+        <div class="clearfix"></div>
+    </div>
+
+    <table class="table table-hover" id="user-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date Joined</th>
+                <th>E-mail</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+             {
+                <tr data-id="@customer.Id">
+                    <td class="td-editable" data-val="@customer.Name" data-name="name">@customer.Name</td>
+                    <td class="td-editable" data-val="@customer.DateJoined.ToString("MMM dd, yyyy")" data-name="dateJoined">@customer.DateJoined.ToString("MMM dd, yyyy")</td>
+                    <td class="td-editable" data-val="@customer.Email" data-name="email">@customer.Email</td>
+                    <td class="td-actions">
+                        <div class="pull-right">
+                            <div class="btn-container editting-unshow">
+                                <button class="btn btn-primary btn-xs btn-edit" type="button">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </button>
+                            </div>
+
+                            <div class="btn-container editting-show">
+                                <button class="btn btn-success btn-xs btn-save" type="button">
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                </button>
+                            </div>
+
+                            <div class="btn-container editting-show">
+                                <button class="btn btn-warning btn-xs btn-cancel" type="button">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button>
+                            </div>
+
+                            <div class="btn-container editting-unshow">
+                                <button class="btn btn-danger btn-xs btn-delete" type="button">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+             }
+
+            <tr data-id="0" class="tr-template">
+                <td class="td-editable" data-val="" data-name="name">
+                    <input class="form-control" type="text" value="" />
+                </td>
+                <td class="td-editable" data-val="" data-name="dateJoined">
+                    <input class="form-control date-picker" type="text" />
+                </td>
+                <td class="td-editable" data-val="" data-name="email">
+                    <input class="form-control" type="text" value="" />
+                </td>
+                <td class="td-actions">
+                    <div class="pull-right">
+                        <div class="btn-container editting-show">
+                            <button class="btn btn-primary btn-xs btn-edit" type="button">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
+                        <div class="btn-container editting-unshow">
+                            <button class="btn btn-success btn-xs btn-save" type="button">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
+                        <div class="btn-container editting-unshow">
+                            <button class="btn btn-warning btn-xs btn-cancel" type="button">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
+                        <div class="btn-container editting-show">
+                            <button class="btn btn-danger btn-xs btn-delete" type="button">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>
+                        <button class="btn btn-default btn-xs btn-add pull-right" type="button">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/Pages/customer-management.js"></script>
+    <script>
+        $(function () {
+            CustomerManagement.init();
+        });
+    </script>
+}
