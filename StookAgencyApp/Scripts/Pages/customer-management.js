@@ -45,6 +45,7 @@
             addError($tdEmail, 'Email is required.');
         } else {
             if (!validateEmail($txtEmail.val())) {
+                isValid = false;
                 addError($tdEmail, 'Email address is invalid.');
             }
         }
